@@ -55,7 +55,7 @@ jobs:
 
             - name: tag the image
               run: |    
-                docker tag flask-app ${{ secrets.DOCKER_USERNAME }}/flask-redis-app:latest
+                docker tag flask-redis-app ${{ secrets.DOCKER_USERNAME }}/flask-redis-app:latest
 
             - name: push image to Hub
               run: |
