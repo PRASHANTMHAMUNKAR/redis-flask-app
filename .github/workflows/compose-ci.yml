@@ -74,11 +74,11 @@ jobs:
                 username: ${{ secrets.EC2_USERNAME }}
                 password: ${{ secrets.EC2_PASSWORD }}
 
-         script: |
-                echo "Logging into Docker Hub"
-                echo "${{ secrets.EC2_PASSWORD }}" | docker login -u ${{ EC2_USERNAME }} --password-stdin
-                docker compose version
-                docker pull ${{ secrets.DOCKER_USERNAME }}/flask-redis-app:latest
-                docker images
+                script: |
+                    echo "Logging into Docker Hub"
+                    echo "${{ secrets.EC2_PASSWORD }}" | docker login -u ${{ secrets.EC2_USERNAME }} --password-stdin
+                    docker compose version
+                    docker pull ${{ secrets.DOCKER_USERNAME }}/flask-redis-app:latest
+                    docker images
 
 
