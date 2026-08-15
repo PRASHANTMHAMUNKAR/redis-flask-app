@@ -77,8 +77,7 @@ jobs:
                 username: ${{ secrets.EC2_USERNAME }}
                 key: ${{ secrets.EC2_PASSWORD }}
                 source: "docker-compose.yml"
-                target: "/opt/docker-compose.yml" 
-              
+                target: "/home/ubuntu/flask-app-demo"             
             - name: Pull image and Deploy application to EC2
               uses: appleboy/ssh-action@v1.2.5
               with:
@@ -87,7 +86,7 @@ jobs:
                 key: ${{ secrets.EC2_PASSWORD }}
 
                 script: |
-                    cd /opt/flask-compose-demo
+                    cd /home/ubuntu/flask-app-demo
                     docker compose version
                     echo "Logging into Docker Hub"
                     echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin                    
