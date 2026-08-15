@@ -68,7 +68,7 @@ jobs:
 
         steps:
             - name: Pull image to EC2
-              uses: appleboy/ssh-action@v1.2.5  appleboy/ssh-action@v1.2.5
+              uses: appleboy/ssh-action@v1.2.5
               with:
                 host: ${{ secrets.EC2_HOST }}
                 username: ${{ secrets.DOCKER_USERNAME }}
