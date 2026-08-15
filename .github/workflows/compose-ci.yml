@@ -67,6 +67,8 @@ jobs:
         needs: push
 
         steps:
+            - name: Checkout the code
+              uses: actions/checkout@v4
 
             - name: Copying Docker compose file to ec2
               uses: appleboy/scp-action@v1
