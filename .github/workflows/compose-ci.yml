@@ -14,13 +14,13 @@ jobs:
 
             - name: Run the app
               run: |
-                  docker-compose up -d --build
+                  docker compose up -d --build
             - name: Check the container
               run: |
-                    docker-compose ps
+                    docker compose ps
             - name: Show the logs
               run: |
-                    docker-compose logs
+                    docker compose logs
             - name: Wait for the application
               run: |
                     sleep 10
@@ -33,4 +33,4 @@ jobs:
             - name: Down the application  
               if: always()          
               run: |
-                    docker-compose down
+                    docker compose down
