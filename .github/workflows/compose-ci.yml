@@ -69,7 +69,7 @@ jobs:
         steps:
 
             - name: Copying Docker compose file to ec2
-              uses: appleboy/scp-action@v1.8.0
+              uses: appleboy/scp-action@v1
               with: 
                 host: ${{ secrets.EC2_HOST }}
                 username: ${{ secrets.EC2_USERNAME }}
