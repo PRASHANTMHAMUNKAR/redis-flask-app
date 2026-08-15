@@ -1,0 +1,36 @@
+name: Flask redis application CI
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout the code
+              uses: actions/checkout@v4
+
+            - name: Run the app
+              run: |
+                  docker-compose up -d --build
+            - name: Check the container
+              run: |
+                    docker-compose ps
+            - name: Show the logs
+              run: |
+                    docker-compose logs
+            - name: Wait for the application
+              run: |
+                    sleep 10
+            - name: Check the Flask application
+              run: |
+                    curl -f http://localhost:5000/health
+            - name: Check the Redis integration
+              run: |
+                    curl -f http://localhost:5000/count
+            - name: Down the application  
+              if: always()          
+              run: |
+                    docker-compose down
