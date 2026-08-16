@@ -55,7 +55,7 @@ jobs:
 
             - name: push image to Hub
               run: |
-                docker push ${{ secrets.DOCKER_USERNAME }}/flask-redis-app:latest     
+                docker push prasahntmhamunkar/flask-redis-app:latest     
 
     pull:
         name: Pull image to EC2
