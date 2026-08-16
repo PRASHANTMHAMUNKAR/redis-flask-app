@@ -4,7 +4,7 @@ services:
     image: prashantmhamunkar/flask-redis-app:latest
     container_name: flask-redis-app
     ports:
-      - "80:5000"
+      - "5000:5000"
     environment: 
       REDIS_HOST: redis
     depends_on:
